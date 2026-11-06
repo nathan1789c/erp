@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grand Luxury Hotel & Spa - Trải Nghiệm Đẳng Cấp 5 Sao</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts (Playfair Display & Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            DEFAULT: '#0B1325',
+                            light: '#16223B',
+                            dark: '#050A14'
+                        },
+                        gold: {
+                            light: '#F3E5AB',
+                            DEFAULT: '#D4AF37',
+                            dark: '#AA820A'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #FFE8A3 0%, #D4AF37 50%, #AA820A 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-gradient-bg {
+            background: linear-gradient(135deg, #D4AF37 0%, #AA820A 100%);
+        }
+        .gold-gradient-bg:hover {
+            background: linear-gradient(135deg, #E5BE48 0%, #B99115 100%);
+        }
+        .glass-card {
+            background: rgba(22, 34, 59, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-navy font-sans text-gray-200 antialiased overflow-x-hidden">
+
+    <!-- HEADER / NAVIGATION -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-navy/90 backdrop-blur-md border-b border-gold/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-full border border-gold flex items-center justify-center text-gold group-hover:bg-gold group-hover:text-navy transition-all duration-300">
+                        <i class="fa-solid font-serif text-xl font-bold">G</i>
+                    </div>
+                    <div>
+                        <span class="font-serif text-xl font-bold tracking-wider text-white block leading-none">GRAND LUXURY</span>
+                        <span class="text-[10px] tracking-[0.2em] text-gold uppercase">Hotel & Spa</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="text-sm uppercase tracking-wider text-gray-300 hover:text-gold transition-colors">Giới Thiệu</a>
+                    <a href="#rooms" class="text-sm uppercase tracking-wider text-gray-300 hover:text-gold transition-colors">Phòng Nghỉ</a>
+                    <a href="#amenities" class="text-sm uppercase tracking-wider text-gray-300 hover:text-gold transition-colors">Tiện Ích</a>
+                    <a href="#reviews" class="text-sm uppercase tracking-wider text-gray-300 hover:text-gold transition-colors">Đánh Giá</a>
+                    <a href="#booking" class="text-sm uppercase tracking-wider text-gray-300 hover:text-gold transition-colors">Liên Hệ</a>
+                </nav>
+
+                <!-- Book Now Button (Header) -->
+                <div class="hidden sm:block">
+                    <a href="#booking" class="gold-gradient-bg text-navy-dark font-semibold px-5 py-2.5 rounded-md text-sm uppercase tracking-wider shadow-lg hover:shadow-gold/20 transition-all duration-300 inline-block">
+                        Đặt Phòng Ngay
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <button id="mobile-menu-btn" class="md:hidden text-gold focus:outline-none p-2">
+                    <i class="fa-solid fa-bars text-2xl" id="menu-icon"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden bg-navy-light border-b border-gold/20 px-4 pt-2 pb-6 space-y-3">
+            <a href="#about" class="mobile-link block py-2 text-base font-medium text-gray-200 hover:text-gold">Giới Thiệu</a>
+            <a href="#rooms" class="mobile-link block py-2 text-base font-medium text-gray-200 hover:text-gold">Phòng Nghỉ</a>
+            <a href="#amenities" class="mobile-link block py-2 text-base font-medium text-gray-200 hover:text-gold">Tiện Ích</a>
+            <a href="#reviews" class="mobile-link block py-2 text-base font-medium text-gray-200 hover:text-gold">Đánh Giá</a>
+            <a href="#booking" class="mobile-link block py-2 text-base font-medium text-gray-200 hover:text-gold">Liên Hệ</a>
+            <a href="#booking" class="mobile-link block w-full text-center gold-gradient-bg text-navy-dark font-semibold py-3 rounded-md uppercase tracking-wider mt-4">
+                Đặt Phòng Ngay
+            </a>
+        </div>
+    </header>
+
+    <!-- HERO BANNER -->
+    <section class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1920&q=80" 
+                 alt="Luxury Hotel Exterior" 
+                 class="w-full h-full object-cover object-center scale-105 transform animate-pulse-subtle"
+                 onerror="this.src='https://placehold.co/1920x1080/0B1325/D4AF37?text=Grand+Luxury+Hotel'">
+            <div class="absolute inset-0 bg-gradient-to-t from-navy via-navy/60 to-navy/30"></div>
+        </div>
+
+        <!-- Hero Content -->
+        <div class="relative z-10 text-center max-w-4xl mx-auto px-4 sm:px-6 py-12">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-gold/40 bg-navy/60 backdrop-blur-md mb-6">
+                <i class="fa-solid fa-star text-gold text-xs"></i>
+                <i class="fa-solid fa-star text-gold text-xs"></i>
+                <i class="fa-solid fa-star text-gold text-xs"></i>
+                <i class="fa-solid fa-star text-gold text-xs"></i>
+                <i class="fa-solid fa-star text-gold text-xs"></i>
+                <span class="text-xs uppercase tracking-widest text-gold-light font-medium ml-1">Đẳng Cấp 5 Sao Quốc Tế</span>
+            </div>
+            
+            <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl text-white font-bold tracking-tight mb-6 leading-tight">
+                Thiên Đường Nghỉ Dưỡng <br><span class="gold-gradient-text">Sang Trọng & Bậc Nhất</span>
+            </h1>
+            
+            <p class="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto mb-10 leading-relaxed font-light">
+                Tận hưởng không gian nghỉ dưỡng đỉnh cao, view biển tuyệt đẹp và trải nghiệm dịch vụ cá nhân hóa tinh tế nhất.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#booking" class="w-full sm:w-auto gold-gradient-bg text-navy-dark font-bold px-8 py-4 rounded-md text-base uppercase tracking-wider shadow-xl hover:shadow-gold/30 hover:-translate-y-0.5 transition-all duration-300">
+                    Đặt Phòng Ngay
+                </a>
+                <a href="#rooms" class="w-full sm:w-auto border border-gold/60 text-gold hover:bg-gold/10 font-medium px-8 py-4 rounded-md text-base uppercase tracking-wider backdrop-blur-sm transition-all duration-300">
+                    Khám Phá Phòng
+                </a>
+            </div>
+        </div>
+
+        <!-- Scroll Down Arrow -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 animate-bounce">
+            <a href="#about" class="text-gold/70 hover:text-gold transition-colors p-2">
+                <i class="fa-solid fa-chevron-down text-xl"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="py-24 bg-navy-light relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                
+                <!-- Left Column: Images Grid -->
+                <div class="grid grid-cols-2 gap-4 relative">
+                    <div class="space-y-4">
+                        <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=800&q=80" 
+                             alt="Hotel Lobby" 
+                             class="rounded-lg shadow-xl object-cover h-64 w-full border border-gold/20"
+                             onerror="this.src='https://placehold.co/600x800/16223B/D4AF37?text=Hotel+Lobby'">
+                        <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80" 
+                             alt="Luxury Bedroom" 
+                             class="rounded-lg shadow-xl object-cover h-48 w-full border border-gold/20"
+                             onerror="this.src='https://placehold.co/600x600/16223B/D4AF37?text=Luxury+Room'">
+                    </div>
+                    <div class="space-y-4 pt-8">
+                        <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80" 
+                             alt="Hotel Spa" 
+                             class="rounded-lg shadow-xl object-cover h-48 w-full border border-gold/20"
+                             onerror="this.src='https://placehold.co/600x600/16223B/D4AF37?text=Hotel+Spa'">
+                        <img src="https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?auto=format&fit=crop&w=800&q=80" 
+                             alt="Hotel Pool" 
+                             class="rounded-lg shadow-xl object-cover h-64 w-full border border-gold/20"
+                             onerror="this.src='https://placehold.co/600x800/16223B/D4AF37?text=Infinity+Pool'">
+                    </div>
+                    
+                    <!-- Floating Experience Badge -->
+                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 glass-card p-4 rounded-xl text-center shadow-2xl border border-gold">
+                        <span class="font-serif text-3xl font-bold gold-gradient-text block">15+</span>
+                        <span class="text-xs uppercase tracking-wider text-gray-300">Năm Đẳng Cấp</span>
+                    </div>
+                </div>
+
+                <!-- Right Column: Content -->
+                <div>
+                    <span class="text-gold uppercase tracking-widest text-sm font-semibold block mb-2">Chào mừng bạn đến với</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
+                        Kiến Tạo Kỷ Niệm Nghỉ Dưỡng Vô Giá
+                    </h2>
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        Tọa lạc tại vị trí đắc địa nhất bên bờ biển thơ mộng, <strong class="text-gold">Grand Luxury Hotel & Spa</strong> là biểu tượng của sự sang trọng, tinh tế và riêng tư. Với kiến trúc tân cổ điển hoàng gia kết hợp hài hòa cùng thiên nhiên, chúng tôi mang tới không gian thư giãn trọn vẹn nhất cho hành trình của bạn.
+                    </p>
+                    <p class="text-gray-400 mb-8 leading-relaxed">
+                        Mỗi chi tiết dịch vụ tại đây đều được chăm chút kỹ lưỡng bởi đội ngũ nhân viên chuyên nghiệp chuẩn quốc tế, đảm bảo trải nghiệm độc bản dành riêng cho từng vị khách quý.
+                    </p>
+
+                    <!-- Features Mini Grid -->
+                    <div class="grid grid-cols-2 gap-4 mb-8">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-navy flex items-center justify-center text-gold border border-gold/30">
+                                <i class="fa-solid fa-map-location-dot"></i>
+                            </div>
+                            <span class="text-sm font-medium text-gray-200">Vị trí đắc địa sát biển</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-navy flex items-center justify-center text-gold border border-gold/30">
+                                <i class="fa-solid fa-bell-concierge"></i>
+                            </div>
+                            <span class="text-sm font-medium text-gray-200">Phục vụ Butler 24/7</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-navy flex items-center justify-center text-gold border border-gold/30">
+                                <i class="fa-solid fa-utensils"></i>
+                            </div>
+                            <span class="text-sm font-medium text-gray-200">Ẩm thực Michelin 5 sao</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-navy flex items-center justify-center text-gold border border-gold/30">
+                                <i class="fa-solid fa-spa"></i>
+                            </div>
+                            <span class="text-sm font-medium text-gray-200">Spa thư giãn cao cấp</span>
+                        </div>
+                    </div>
+
+                    <a href="#amenities" class="inline-flex items-center gap-2 text-gold hover:text-white font-semibold transition-colors group">
+                        Khám phá thêm về dịch vụ <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ROOMS & SUITES SECTION -->
+    <section id="rooms" class="py-24 bg-navy relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold uppercase tracking-widest text-sm font-semibold block mb-2">Không Gian Nghỉ Dưỡng</span>
+                <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">Danh Sách Phòng & Suites</h2>
+                <div class="w-24 h-1 gold-gradient-bg mx-auto mb-6 rounded-full"></div>
+                <p class="text-gray-300">Tất cả các phòng đều được thiết kế rộng rãi, nội thất cao cấp và sở hữu tầm nhìn đắt giá hướng ra đại dương xanh thẫm.</p>
+            </div>
+
+            <!-- Room Cards Container -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Room Card 1 -->
+                <div class="bg-navy-light rounded-xl overflow-hidden border border-gold/20 hover:border-gold/60 transition-all duration-300 group hover:-translate-y-2 flex flex-col">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=800&q=80" 
+                             alt="Deluxe Ocean View" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                             onerror="this.src='https://placehold.co/800x600/16223B/D4AF37?text=Deluxe+Ocean+View'">
+                        <div class="absolute top-4 right-4 bg-navy/80 backdrop-blur-md px-3 py-1 rounded-full border border-gold/40 text-xs text-gold font-semibold">
+                            Phổ Biến
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="font-serif text-2xl font-bold text-white group-hover:text-gold transition-colors">Deluxe Ocean View</h3>
+                            </div>
+                            <p class="text-gold font-semibold text-xl mb-4">3.500.000 VNĐ <span class="text-xs text-gray-400 font-normal">/ đêm</span></p>
+                            
+                            <!-- Room Specs -->
+                            <div class="flex items-center gap-4 text-xs text-gray-300 border-y border-gray-700/60 py-3 mb-4">
+                                <span class="flex items-center gap-1.5"><i class="fa-solid fa-vector-square text-gold"></i> 45 m²</span>
+                                <span class="flex items-center gap-1.5"><i class="fa-solid fa-bed text-gold"></i> 1 Giường King</span>
+                                <span class="flex items-center gap-1.5"><i class="fa-solid fa-user-group text-gold"></i> 2 Khách</span>
+                            </div>
+
+                            <!-- Amenities Icons -->
+                            <div class="space-y-2 text-sm text-gray-400 mb-6">
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-wifi text-gold/70 w-4"></i> Wi-Fi tốc độ cao miễn phí</div>
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-water text-gold/70 w-4"></i> Ban công riêng hướng biển</div>
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-bath text-gold/70 w-4"></i> Bồn tắm nằm sục Jacuzzi</div>
+                            </div>
+                        </div>
+
+                        <button onclick="selectRoom('Deluxe Ocean View')" class="w-full py-3 rounded-md border border-gold text-gold hover:bg-gold hover:text-navy font-semibold text-sm uppercase tracking-wider transition-all duration-300">
+                            Đặt Phòng Ngay
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Room Card 2 -->
+                <div class="bg-navy-light rounded-xl overflow-hidden border border-gold/20 hover:border-gold/60 transition-all duration-300 group hover:-translate-y-2 flex flex-col">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=800&q=80" 
+                             alt="Suite Hoang Gia" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                             onerror="this.src='https://placehold.co/800x600/16223B/D4AF37?text=Suite+Hoang+Gia'">
+                        <div class="absolute top-4 right-4 bg-navy/80 backdrop-blur-md px-3 py-1 rounded-full border border-gold/40 text-xs text-gold font-semibold">
+                            Cao Cấp
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="font-serif text-2xl font-bold text-white group-hover:text-gold transition-colors">Suite Hoàng Gia</h3>
+                            </div>
+                            <p class="text-gold font-semibold text-xl mb-4">6.800.000 VNĐ <span class="text-xs text-gray-400 font-normal">/ đêm</span></p>
+                            
+                            <!-- Room Specs -->
+                            <div class="flex items-center gap-4 text-xs text-gray-300 border-y border-gray-700/60 py-3 mb-4">
+                                <span class="flex items-center gap-1.5"><i class="fa-solid fa-vector-square text-gold"></i> 85 m²</span>
+                                <span class="flex items-center gap-1.5"><i class="fa-solid fa-bed text-gold"></i> 1 Super King</span>
+                                <span class="flex items-center gap-1.5"><i class="fa-solid fa-user-group text-gold"></i> 2-3 Khách</span>
+                            </div>
+
+                            <!-- Amenities Icons -->
+                            <div class="space-y-2 text-sm text-gray-400 mb-6">
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-couch text-gold/70 w-4"></i> Phòng khách riêng biệt</div>
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-wine-glass text-gold/70 w-4"></i> Quầy Bar Mini cao cấp</div>
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-concierge-bell text-gold/70 w-4"></i> Phục vụ điểm tâm tại phòng</div>
+                            </div>
+                        </div>
+
+                        <button onclick="selectRoom('Suite Hoàng Gia')" class="w-full py-3 rounded-md border border-gold text-gold hover:bg-gold hover:text-navy font-semibold text-sm uppercase tracking-wider transition-all duration-300">
+                            Đặt Phòng Ngay
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Room Card 3 -->
+                <div class="bg-navy-light rounded-xl overflow-hidden border border-gold/20 hover:border-gold/60 transition-all duration-300 group hover:-translate-y-2 flex flex-col">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=800&q=80" 
+                             alt="Presidential Suite" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                             onerror="this.src='https://placehold.co/800x600/16223B/D4AF37?text=Presidential+Suite'">
+                        <div class="absolute top-4 right-4 gold-gradient-bg px-3 py-1 rounded-full text-xs text-navy font-bold">
+                            Đặc Biệt
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="font-serif text-2xl font-bold text-white group-hover:text-gold transition-colors">Presidential Suite</h3>
+                            </div>
+                            <p class="text-gold font-semibold text-xl mb-4">15.000.000 VNĐ <span class="text-xs text-gray-400 font-normal">/ đêm</span></p>
+                            
+                            <!-- Room Specs -->
+                            <div class="flex items-center gap-4 text-xs text-gray-300 border-y border-gray-700/60 py-3 mb-4">
+                                <span class="flex items-center gap-1.5"><i class="fa-solid fa-vector-square text-gold"></i> 160 m²</span>
+                                <span class="flex items-center gap-1.5"><i class="fa-solid fa-bed text-gold"></i> 2 Giường King</span>
+                                <span class="flex items-center gap-1.5"><i class="fa-solid fa-user-group text-gold"></i> 4-5 Khách</span>
+                            </div>
+
+                            <!-- Amenities Icons -->
+                            <div class="space-y-2 text-sm text-gray-400 mb-6">
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-person-swimming text-gold/70 w-4"></i> Hồ bơi vô cực riêng trên tầng tum</div>
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-user-tie text-gold/70 w-4"></i> Quản gia cá nhân (Butler 24/7)</div>
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-car text-gold/70 w-4"></i> Xe đưa đón sân bay xa hoa</div>
+                            </div>
+                        </div>
+
+                        <button onclick="selectRoom('Presidential Suite')" class="w-full py-3 rounded-md border border-gold text-gold hover:bg-gold hover:text-navy font-semibold text-sm uppercase tracking-wider transition-all duration-300">
+                            Đặt Phòng Ngay
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- AMENITIES SECTION -->
+    <section id="amenities" class="py-24 bg-navy-light relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold uppercase tracking-widest text-sm font-semibold block mb-2">Trải Nghiệm Thượng Lưu</span>
+                <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">Dịch Vụ & Tiện Ích Đẳng Cấp</h2>
+                <div class="w-24 h-1 gold-gradient-bg mx-auto mb-6 rounded-full"></div>
+                <p class="text-gray-300">Nâng tầm kỳ nghỉ của bạn với chuỗi dịch vụ tiện ích sang trọng được thiết kế hoàn hảo.</p>
+            </div>
+
+            <!-- Amenities Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <!-- Amenity 1 -->
+                <div class="bg-navy p-8 rounded-xl border border-gold/10 hover:border-gold/50 transition-all duration-300 text-center group hover:-translate-y-2">
+                    <div class="w-16 h-16 rounded-full bg-navy-light mx-auto mb-6 flex items-center justify-center border border-gold/30 text-gold text-2xl group-hover:bg-gold group-hover:text-navy transition-all duration-300">
+                        <i class="fa-solid fa-utensils"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-white mb-3 group-hover:text-gold transition-colors">Nhà Hàng 5 Sao</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Thưởng thức ẩm thực Á - Âu tinh tế được chế biến bởi các đầu bếp Michelin hàng đầu thế giới.
+                    </p>
+                </div>
+
+                <!-- Amenity 2 -->
+                <div class="bg-navy p-8 rounded-xl border border-gold/10 hover:border-gold/50 transition-all duration-300 text-center group hover:-translate-y-2">
+                    <div class="w-16 h-16 rounded-full bg-navy-light mx-auto mb-6 flex items-center justify-center border border-gold/30 text-gold text-2xl group-hover:bg-gold group-hover:text-navy transition-all duration-300">
+                        <i class="fa-solid fa-water-ladder"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-white mb-3 group-hover:text-gold transition-colors">Hồ Bơi Vô Cực</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Hồ bơi tràn bờ góc nhìn toàn cảnh đại dương, phục vụ cocktail và đồ ăn nhẹ tại chỗ.
+                    </p>
+                </div>
+
+                <!-- Amenity 3 -->
+                <div class="bg-navy p-8 rounded-xl border border-gold/10 hover:border-gold/50 transition-all duration-300 text-center group hover:-translate-y-2">
+                    <div class="w-16 h-16 rounded-full bg-navy-light mx-auto mb-6 flex items-center justify-center border border-gold/30 text-gold text-2xl group-hover:bg-gold group-hover:text-navy transition-all duration-300">
+                        <i class="fa-solid fa-spa"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-white mb-3 group-hover:text-gold transition-colors">Spa & Massage</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Liệu trình trị liệu truyền thống và hiện đại giúp thư giãn tâm trí và phục hồi sức sống trọn vẹn.
+                    </p>
+                </div>
+
+                <!-- Amenity 4 -->
+                <div class="bg-navy p-8 rounded-xl border border-gold/10 hover:border-gold/50 transition-all duration-300 text-center group hover:-translate-y-2">
+                    <div class="w-16 h-16 rounded-full bg-navy-light mx-auto mb-6 flex items-center justify-center border border-gold/30 text-gold text-2xl group-hover:bg-gold group-hover:text-navy transition-all duration-300">
+                        <i class="fa-solid fa-dumbbell"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-white mb-3 group-hover:text-gold transition-colors">Phòng Gym Hiện Đại</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Trang thiết bị tập luyện Technogym tiên tiến nhất với huấn luyện viên cá nhân hỗ trợ 24/7.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section id="reviews" class="py-24 bg-navy relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold uppercase tracking-widest text-sm font-semibold block mb-2">Cảm Nhận Từ Khách Hàng</span>
+                <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">Đánh Giá Đẳng Cấp</h2>
+                <div class="w-24 h-1 gold-gradient-bg mx-auto mb-6 rounded-full"></div>
+            </div>
+
+            <!-- Testimonial Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Review 1 -->
+                <div class="bg-navy-light p-8 rounded-xl border border-gold/20 relative flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-gold gap-1 mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-300 italic mb-6 leading-relaxed">
+                            "Kỳ nghỉ tuyệt vời nhất của gia đình tôi! Dịch vụ butler tận tâm, phòng Presidential Suite rộng rãi và view đẹp đến ngỡ ngàng. Sẽ chắc chắn quay lại!"
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80" 
+                             alt="Avatar" 
+                             class="w-12 h-12 rounded-full object-cover border border-gold"
+                             onerror="this.src='https://placehold.co/100x100/16223B/D4AF37?text=User'">
+                        <div>
+                            <h4 class="font-serif font-bold text-white">Bà Ngô Thu Hà</h4>
+                            <span class="text-xs text-gray-400">Doanh nhân - Hà Nội</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="bg-navy-light p-8 rounded-xl border border-gold/20 relative flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-gold gap-1 mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-300 italic mb-6 leading-relaxed">
+                            "Không gian tinh tế, ẩm thực tại nhà hàng 5 sao chuẩn hương vị Pháp. Dịch vụ Spa thực sự giúp tôi trút bỏ mọi căng thẳng công việc."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80" 
+                             alt="Avatar" 
+                             class="w-12 h-12 rounded-full object-cover border border-gold"
+                             onerror="this.src='https://placehold.co/100x100/16223B/D4AF37?text=User'">
+                        <div>
+                            <h4 class="font-serif font-bold text-white">Ông Trần Minh Hoàng</h4>
+                            <span class="text-xs text-gray-400">Giám đốc Sáng tạo - TP.HCM</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="bg-navy-light p-8 rounded-xl border border-gold/20 relative flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-gold gap-1 mb-4">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-gray-300 italic mb-6 leading-relaxed">
+                            "Vợ chồng tôi đã có một tuần trăng mật hoàn hảo tại đây. Hồ bơi vô cực ngắm hoàng hôn cực kỳ lãng mạn. Đội ngũ nhân viên luôn mỉm cười và hỗ trợ nhiệt tình."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=200&q=80" 
+                             alt="Avatar" 
+                             class="w-12 h-12 rounded-full object-cover border border-gold"
+                             onerror="this.src='https://placehold.co/100x100/16223B/D4AF37?text=User'">
+                        <div>
+                            <h4 class="font-serif font-bold text-white">Chị Emma Watson</h4>
+                            <span class="text-xs text-gray-400">Du khách quốc tế - UK</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- BOOKING FORM SECTION -->
+    <section id="booking" class="py-24 bg-navy-light relative">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-navy rounded-2xl p-8 sm:p-12 border border-gold/30 shadow-2xl relative overflow-hidden">
+                <!-- Background Accent Glow -->
+                <div class="absolute -top-24 -right-24 w-72 h-72 bg-gold/10 rounded-full blur-3xl pointer-events-none"></div>
+
+                <div class="text-center max-w-2xl mx-auto mb-10">
+                    <span class="text-gold uppercase tracking-widest text-sm font-semibold block mb-2">Đặt Phòng Trực Tuyến</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white mb-3">Lên Kế Hoạch Cho Kỳ Nghỉ Mơ Ước</h2>
+                    <p class="text-gray-400 text-sm">Điền thông tin bên dưới để nhận ngay ưu đãi giảm 15% cho lượt đặt phòng trực tiếp.</p>
+                </div>
+
+                <!-- Form Message Notification Container -->
+                <div id="booking-alert" class="hidden mb-6 p-4 rounded-md bg-gold/20 border border-gold text-gold text-center font-medium"></div>
+
+                <form id="booking-form" class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        
+                        <!-- Full Name -->
+                        <div>
+                            <label class="block text-xs uppercase tracking-wider font-semibold text-gray-300 mb-2">Họ & Tên *</label>
+                            <input type="text" required placeholder="Nguyễn Văn A" 
+                                   class="w-full bg-navy-light border border-gray-700 focus:border-gold rounded-md px-4 py-3 text-white placeholder-gray-500 outline-none transition-colors">
+                        </div>
+
+                        <!-- Phone / Email -->
+                        <div>
+                            <label class="block text-xs uppercase tracking-wider font-semibold text-gray-300 mb-2">Số Điện Thoại / Email *</label>
+                            <input type="text" required placeholder="0901 234 567 / email@example.com" 
+                                   class="w-full bg-navy-light border border-gray-700 focus:border-gold rounded-md px-4 py-3 text-white placeholder-gray-500 outline-none transition-colors">
+                        </div>
+
+                        <!-- Check-in Date -->
+                        <div>
+                            <label class="block text-xs uppercase tracking-wider font-semibold text-gray-300 mb-2">Ngày Nhận Phòng *</label>
+                            <input type="date" required id="checkin"
+                                   class="w-full bg-navy-light border border-gray-700 focus:border-gold rounded-md px-4 py-3 text-white outline-none transition-colors">
+                        </div>
+
+                        <!-- Check-out Date -->
+                        <div>
+                            <label class="block text-xs uppercase tracking-wider font-semibold text-gray-300 mb-2">Ngày Trả Phòng *</label>
+                            <input type="date" required id="checkout"
+                                   class="w-full bg-navy-light border border-gray-700 focus:border-gold rounded-md px-4 py-3 text-white outline-none transition-colors">
+                        </div>
+
+                        <!-- Room Selection -->
+                        <div>
+                            <label class="block text-xs uppercase tracking-wider font-semibold text-gray-300 mb-2">Loại Phòng *</label>
+                            <select id="room-select" class="w-full bg-navy-light border border-gray-700 focus:border-gold rounded-md px-4 py-3 text-white outline-none transition-colors">
+                                <option value="Deluxe Ocean View">Deluxe Ocean View (3.500.000 VNĐ/đêm)</option>
+                                <option value="Suite Hoàng Gia">Suite Hoàng Gia (6.800.000 VNĐ/đêm)</option>
+                                <option value="Presidential Suite">Presidential Suite (15.000.000 VNĐ/đêm)</option>
+                            </select>
+                        </div>
+
+                        <!-- Guests Count -->
+                        <div>
+                            <label class="block text-xs uppercase tracking-wider font-semibold text-gray-300 mb-2">Số Lượng Khách</label>
+                            <select class="w-full bg-navy-light border border-gray-700 focus:border-gold rounded-md px-4 py-3 text-white outline-none transition-colors">
+                                <option value="1">1 Người lớn</option>
+                                <option value="2" selected>2 Người lớn</option>
+                                <option value="3">2 Người lớn + 1 Trẻ em</option>
+                                <option value="4">4 Người lớn</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <!-- Special Requests -->
+                    <div>
+                        <label class="block text-xs uppercase tracking-wider font-semibold text-gray-300 mb-2">Yêu Cầu Đặc Biệt</label>
+                        <textarea rows="3" placeholder="Ví dụ: Phòng tầng cao, đưa đón sân bay, trang trí phòng kỷ niệm..." 
+                                  class="w-full bg-navy-light border border-gray-700 focus:border-gold rounded-md px-4 py-3 text-white placeholder-gray-500 outline-none transition-colors"></textarea>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="text-center pt-4">
+                        <button type="submit" class="w-full sm:w-auto gold-gradient-bg text-navy-dark font-bold px-12 py-4 rounded-md uppercase tracking-wider text-base shadow-xl hover:shadow-gold/30 transition-all duration-300">
+                            Gửi Yêu Cầu Đặt Phòng
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-navy-dark text-gray-400 border-t border-gold/20 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+                
+                <!-- Col 1: Brand -->
+                <div class="space-y-4">
+                    <a href="#" class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full border border-gold flex items-center justify-center text-gold">
+                            <i class="fa-solid font-serif text-xl font-bold">G</i>
+                        </div>
+                        <div>
+                            <span class="font-serif text-xl font-bold tracking-wider text-white block leading-none">GRAND LUXURY</span>
+                            <span class="text-[10px] tracking-[0.2em] text-gold uppercase">Hotel & Spa</span>
+                        </div>
+                    </a>
+                    <p class="text-sm leading-relaxed text-gray-400">
+                        Điểm đến nghỉ dưỡng 5 sao sang trọng bậc nhất, mang tới cho du khách những khoảnh khắc thư thái tuyệt vời.
+                    </p>
+                    <div class="flex gap-3 pt-2">
+                        <a href="#" class="w-9 h-9 rounded-full bg-navy-light border border-gold/30 flex items-center justify-center text-gold hover:bg-gold hover:text-navy transition-colors">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-9 h-9 rounded-full bg-navy-light border border-gold/30 flex items-center justify-center text-gold hover:bg-gold hover:text-navy transition-colors">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-9 h-9 rounded-full bg-navy-light border border-gold/30 flex items-center justify-center text-gold hover:bg-gold hover:text-navy transition-colors">
+                            <i class="fa-brands fa-tripadvisor"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Quick Links -->
+                <div>
+                    <h4 class="font-serif text-white font-bold text-lg mb-4 border-b border-gold/30 pb-2 inline-block">Liên Kết Nhanh</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#about" class="hover:text-gold transition-colors">Về Chúng Tôi</a></li>
+                        <li><a href="#rooms" class="hover:text-gold transition-colors">Danh Sách Phòng</a></li>
+                        <li><a href="#amenities" class="hover:text-gold transition-colors">Dịch Vụ & Tiện Ích</a></li>
+                        <li><a href="#reviews" class="hover:text-gold transition-colors">Đánh Giá Khách Hàng</a></li>
+                        <li><a href="#booking" class="hover:text-gold transition-colors">Đặt Phòng</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Contact Info -->
+                <div>
+                    <h4 class="font-serif text-white font-bold text-lg mb-4 border-b border-gold/30 pb-2 inline-block">Thông Tin Liên Hệ</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-location-dot text-gold mt-1"></i>
+                            <span>79 Đường Võ Nguyên Giáp, Phường Khuê Mỹ, Q. Ngũ Hành Sơn, Đà Nẵng</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-phone text-gold"></i>
+                            <span>+84 (0) 236 388 8888</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-envelope text-gold"></i>
+                            <span>info@grandluxuryhotel.com</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Newsletter / Map -->
+                <div>
+                    <h4 class="font-serif text-white font-bold text-lg mb-4 border-b border-gold/30 pb-2 inline-block">Bản Tin Ưu Đãi</h4>
+                    <p class="text-sm mb-4">Đăng ký nhận thông tin khuyến mãi và các gói nghỉ dưỡng đặc quyền.</p>
+                    <form onsubmit="event.preventDefault(); alertCustom('Cảm ơn bạn đã đăng ký nhận bản tin!');" class="space-y-2">
+                        <input type="email" required placeholder="Nhập email của bạn..." 
+                               class="w-full bg-navy-light border border-gray-700 focus:border-gold rounded-md px-3 py-2 text-sm text-white outline-none">
+                        <button type="submit" class="w-full gold-gradient-bg text-navy-dark font-bold py-2 rounded-md text-xs uppercase tracking-wider">
+                            Đăng Ký
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+
+            <!-- Bottom Line -->
+            <div class="border-t border-gray-800 pt-6 text-center text-xs text-gray-500">
+                <p>&copy; 2026 Grand Luxury Hotel & Spa. Tất cả quyền được bảo lưu. Thiết kế Demo Sang Trọng.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Toggle Mobile Menu
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            if (mobileMenu.classList.contains('hidden')) {
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            } else {
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-xmark');
+            }
+        });
+
+        // Close Mobile Menu when clicking link
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            });
+        });
+
+        // Custom Banner/Alert display (Strictly avoiding default alert())
+        function alertCustom(message) {
+            const alertBox = document.getElementById('booking-alert');
+            alertBox.innerText = message;
+            alertBox.classList.remove('hidden');
+            setTimeout(() => {
+                alertBox.classList.add('hidden');
+            }, 5000);
+        }
+
+        // Quick Select Room Button Action
+        function selectRoom(roomName) {
+            const roomSelect = document.getElementById('room-select');
+            if (roomSelect) {
+                roomSelect.value = roomName;
+            }
+            const bookingSection = document.getElementById('booking');
+            bookingSection.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Handle Booking Form Submit
+        const bookingForm = document.getElementById('booking-form');
+        bookingForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alertCustom('Cảm ơn quý khách! Yêu cầu đặt phòng của quý khách đã được ghi nhận. Bộ phận chăm sóc khách hàng sẽ liên hệ lại trong vòng 15 phút.');
+            bookingForm.reset();
+        });
+
+        // Set Default Date Inputs (Today & Tomorrow)
+        window.addEventListener('DOMContentLoaded', () => {
+            const today = new Date();
+            const tomorrow = new Date(today);
+            tomorrow.setDate(tomorrow.getDate() + 1);
+
+            const formatDate = (date) => date.toISOString().split('T')[0];
+
+            const checkinInput = document.getElementById('checkin');
+            const checkoutInput = document.getElementById('checkout');
+
+            if (checkinInput && checkoutInput) {
+                checkinInput.value = formatDate(today);
+                checkoutInput.value = formatDate(tomorrow);
+            }
+        });
+    </script>
+</body>
+</html>
