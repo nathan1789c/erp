@@ -243,137 +243,226 @@
     </section>
 
     <!-- ROOMS & SUITES SECTION -->
-    <section id="rooms" class="py-24 bg-navy relative">
+    <section id="rooms" class="py-20 bg-slate-50 text-slate-800 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-gold uppercase tracking-widest text-sm font-semibold block mb-2">Không Gian Nghỉ Dưỡng</span>
-                <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">Danh Sách Phòng & Suites</h2>
-                <div class="w-24 h-1 gold-gradient-bg mx-auto mb-6 rounded-full"></div>
-                <p class="text-gray-300">Tất cả các phòng đều được thiết kế rộng rãi, nội thất cao cấp và sở hữu tầm nhìn đắt giá hướng ra đại dương xanh thẫm.</p>
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <span class="text-sky-600 uppercase tracking-widest text-xs font-bold block mb-2">HẠNG PHÒNG</span>
+                <h2 class="font-sans text-3xl sm:text-4xl font-bold text-slate-900 mb-4">Các loại phòng</h2>
+                <p class="text-slate-600 text-sm sm:text-base">
+                    Giá đã bao gồm VAT 10%. Đang áp dụng <strong class="text-slate-900 font-semibold">khuyến mãi giảm 10%</strong> tất cả các loại phòng.
+                </p>
             </div>
 
-            <!-- Room Cards Container -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Room Cards Grid (4 Columns) -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 
-                <!-- Room Card 1 -->
-                <div class="bg-navy-light rounded-xl overflow-hidden border border-gold/20 hover:border-gold/60 transition-all duration-300 group hover:-translate-y-2 flex flex-col">
-                    <div class="relative overflow-hidden h-64">
-                        <img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=800&q=80" 
-                             alt="Deluxe Ocean View" 
-                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                             onerror="this.src='https://placehold.co/800x600/16223B/D4AF37?text=Deluxe+Ocean+View'">
-                        <div class="absolute top-4 right-4 bg-navy/80 backdrop-blur-md px-3 py-1 rounded-full border border-gold/40 text-xs text-gold font-semibold">
-                            Phổ Biến
+                <!-- Card 1: Phòng Standard -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col justify-between">
+                    <div>
+                        <!-- Image & Top Border Accent -->
+                        <div class="relative overflow-hidden border-t-4 border-sky-500 rounded-t-2xl">
+                            <img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=600&q=80" 
+                                 alt="Phòng Standard" 
+                                 class="w-full h-48 object-cover hover:scale-105 transition-transform duration-500"
+                                 onerror="this.src='https://placehold.co/600x400/e2e8f0/0f172a?text=Phong+Standard'">
+                        </div>
+                        
+                        <!-- Content -->
+                        <div class="p-5">
+                            <h3 class="text-xl font-bold text-slate-800 mb-2">Phòng Standard</h3>
+                            
+                            <p class="text-xs text-slate-500 leading-relaxed mb-3">
+                                20 phòng · 19 phòng 1 giường và 1 phòng 2 giường
+                            </p>
+
+                            <div class="flex items-center gap-2 text-xs font-medium text-slate-700 mb-6">
+                                <i class="fa-solid fa-bed text-rose-800 text-sm"></i>
+                                <span>Giường 1,6 m</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between">
-                        <div>
-                            <div class="flex justify-between items-start mb-2">
-                                <h3 class="font-serif text-2xl font-bold text-white group-hover:text-gold transition-colors">Deluxe Ocean View</h3>
-                            </div>
-                            <p class="text-gold font-semibold text-xl mb-4">3.500.000 VNĐ <span class="text-xs text-gray-400 font-normal">/ đêm</span></p>
-                            
-                            <!-- Room Specs -->
-                            <div class="flex items-center gap-4 text-xs text-gray-300 border-y border-gray-700/60 py-3 mb-4">
-                                <span class="flex items-center gap-1.5"><i class="fa-solid fa-vector-square text-gold"></i> 45 m²</span>
-                                <span class="flex items-center gap-1.5"><i class="fa-solid fa-bed text-gold"></i> 1 Giường King</span>
-                                <span class="flex items-center gap-1.5"><i class="fa-solid fa-user-group text-gold"></i> 2 Khách</span>
-                            </div>
 
-                            <!-- Amenities Icons -->
-                            <div class="space-y-2 text-sm text-gray-400 mb-6">
-                                <div class="flex items-center gap-2"><i class="fa-solid fa-wifi text-gold/70 w-4"></i> Wi-Fi tốc độ cao miễn phí</div>
-                                <div class="flex items-center gap-2"><i class="fa-solid fa-water text-gold/70 w-4"></i> Ban công riêng hướng biển</div>
-                                <div class="flex items-center gap-2"><i class="fa-solid fa-bath text-gold/70 w-4"></i> Bồn tắm nằm sục Jacuzzi</div>
+                    <!-- Pricing & Action Button -->
+                    <div class="p-5 pt-0">
+                        <!-- Discount Badge -->
+                        <div class="inline-block bg-emerald-50 text-emerald-600 text-xs font-semibold px-2.5 py-1 rounded-full mb-2">
+                            -15% khuyến mãi
+                        </div>
+
+                        <!-- Price -->
+                        <div class="mb-4">
+                            <span class="text-xs text-slate-400 line-through block mb-0.5">920.000đ</span>
+                            <div class="flex items-baseline gap-1">
+                                <span class="text-2xl font-extrabold text-sky-700">800.000đ</span>
+                                <span class="text-xs text-slate-500 font-normal">/ đêm</span>
                             </div>
                         </div>
 
-                        <button onclick="selectRoom('Deluxe Ocean View')" class="w-full py-3 rounded-md border border-gold text-gold hover:bg-gold hover:text-navy font-semibold text-sm uppercase tracking-wider transition-all duration-300">
-                            Đặt Phòng Ngay
+                        <!-- Button -->
+                        <button onclick="selectRoom('Phòng Standard')" class="w-full bg-[#0872a4] hover:bg-[#065b83] text-white font-semibold py-3 px-4 rounded-full text-sm transition-colors duration-200 shadow-sm">
+                            Đặt phòng này
                         </button>
                     </div>
                 </div>
 
-                <!-- Room Card 2 -->
-                <div class="bg-navy-light rounded-xl overflow-hidden border border-gold/20 hover:border-gold/60 transition-all duration-300 group hover:-translate-y-2 flex flex-col">
-                    <div class="relative overflow-hidden h-64">
-                        <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=800&q=80" 
-                             alt="Suite Hoang Gia" 
-                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                             onerror="this.src='https://placehold.co/800x600/16223B/D4AF37?text=Suite+Hoang+Gia'">
-                        <div class="absolute top-4 right-4 bg-navy/80 backdrop-blur-md px-3 py-1 rounded-full border border-gold/40 text-xs text-gold font-semibold">
-                            Cao Cấp
+                <!-- Card 2: Phòng Đơn VIP -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col justify-between">
+                    <div>
+                        <!-- Image -->
+                        <div class="relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=600&q=80" 
+                                 alt="Phòng Đơn VIP" 
+                                 class="w-full h-48 object-cover hover:scale-105 transition-transform duration-500"
+                                 onerror="this.src='https://placehold.co/600x400/e2e8f0/0f172a?text=Phong+Don+VIP'">
+                        </div>
+                        
+                        <!-- Content -->
+                        <div class="p-5">
+                            <h3 class="text-xl font-bold text-slate-800 mb-2">Phòng Đơn VIP</h3>
+                            
+                            <p class="text-xs text-slate-500 leading-relaxed mb-3">
+                                1 phòng · Phòng 501
+                            </p>
+
+                            <div class="flex items-center gap-2 text-xs font-medium text-slate-700 mb-6">
+                                <i class="fa-solid fa-bed text-rose-800 text-sm"></i>
+                                <span>Giường 1,8 m</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between">
-                        <div>
-                            <div class="flex justify-between items-start mb-2">
-                                <h3 class="font-serif text-2xl font-bold text-white group-hover:text-gold transition-colors">Suite Hoàng Gia</h3>
-                            </div>
-                            <p class="text-gold font-semibold text-xl mb-4">6.800.000 VNĐ <span class="text-xs text-gray-400 font-normal">/ đêm</span></p>
-                            
-                            <!-- Room Specs -->
-                            <div class="flex items-center gap-4 text-xs text-gray-300 border-y border-gray-700/60 py-3 mb-4">
-                                <span class="flex items-center gap-1.5"><i class="fa-solid fa-vector-square text-gold"></i> 85 m²</span>
-                                <span class="flex items-center gap-1.5"><i class="fa-solid fa-bed text-gold"></i> 1 Super King</span>
-                                <span class="flex items-center gap-1.5"><i class="fa-solid fa-user-group text-gold"></i> 2-3 Khách</span>
-                            </div>
 
-                            <!-- Amenities Icons -->
-                            <div class="space-y-2 text-sm text-gray-400 mb-6">
-                                <div class="flex items-center gap-2"><i class="fa-solid fa-couch text-gold/70 w-4"></i> Phòng khách riêng biệt</div>
-                                <div class="flex items-center gap-2"><i class="fa-solid fa-wine-glass text-gold/70 w-4"></i> Quầy Bar Mini cao cấp</div>
-                                <div class="flex items-center gap-2"><i class="fa-solid fa-concierge-bell text-gold/70 w-4"></i> Phục vụ điểm tâm tại phòng</div>
+                    <!-- Pricing & Action Button -->
+                    <div class="p-5 pt-0">
+                        <!-- Discount Badge -->
+                        <div class="inline-block bg-emerald-50 text-emerald-600 text-xs font-semibold px-2.5 py-1 rounded-full mb-2">
+                            -10% khuyến mãi
+                        </div>
+
+                        <!-- Price -->
+                        <div class="mb-4">
+                            <span class="text-xs text-slate-400 line-through block mb-0.5">1.100.000đ</span>
+                            <div class="flex items-baseline gap-1">
+                                <span class="text-2xl font-extrabold text-sky-700">1.000.000đ</span>
+                                <span class="text-xs text-slate-500 font-normal">/ đêm</span>
                             </div>
                         </div>
 
-                        <button onclick="selectRoom('Suite Hoàng Gia')" class="w-full py-3 rounded-md border border-gold text-gold hover:bg-gold hover:text-navy font-semibold text-sm uppercase tracking-wider transition-all duration-300">
-                            Đặt Phòng Ngay
+                        <!-- Button -->
+                        <button onclick="selectRoom('Phòng Đơn VIP')" class="w-full bg-[#0872a4] hover:bg-[#065b83] text-white font-semibold py-3 px-4 rounded-full text-sm transition-colors duration-200 shadow-sm">
+                            Đặt phòng này
                         </button>
                     </div>
                 </div>
 
-                <!-- Room Card 3 -->
-                <div class="bg-navy-light rounded-xl overflow-hidden border border-gold/20 hover:border-gold/60 transition-all duration-300 group hover:-translate-y-2 flex flex-col">
-                    <div class="relative overflow-hidden h-64">
-                        <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=800&q=80" 
-                             alt="Presidential Suite" 
-                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                             onerror="this.src='https://placehold.co/800x600/16223B/D4AF37?text=Presidential+Suite'">
-                        <div class="absolute top-4 right-4 gold-gradient-bg px-3 py-1 rounded-full text-xs text-navy font-bold">
-                            Đặc Biệt
+                <!-- Card 3: Phòng Deluxe -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col justify-between">
+                    <div>
+                        <!-- Image & Top Border Accent -->
+                        <div class="relative overflow-hidden border-t-4 border-sky-500 rounded-t-2xl">
+                            <img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=600&q=80" 
+                                 alt="Phòng Deluxe" 
+                                 class="w-full h-48 object-cover hover:scale-105 transition-transform duration-500"
+                                 onerror="this.src='https://placehold.co/600x400/e2e8f0/0f172a?text=Phong+Deluxe'">
+                        </div>
+                        
+                        <!-- Content -->
+                        <div class="p-5">
+                            <h3 class="text-xl font-bold text-slate-800 mb-2">Phòng Deluxe</h3>
+                            
+                            <p class="text-xs text-slate-500 leading-relaxed mb-3">
+                                1 phòng · Phòng 505
+                            </p>
+
+                            <div class="flex items-center gap-2 text-xs font-medium text-slate-700 mb-6">
+                                <i class="fa-solid fa-bed text-rose-800 text-sm"></i>
+                                <span>Hai giường 1,4 m + 1,4 m</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between">
-                        <div>
-                            <div class="flex justify-between items-start mb-2">
-                                <h3 class="font-serif text-2xl font-bold text-white group-hover:text-gold transition-colors">Presidential Suite</h3>
-                            </div>
-                            <p class="text-gold font-semibold text-xl mb-4">15.000.000 VNĐ <span class="text-xs text-gray-400 font-normal">/ đêm</span></p>
-                            
-                            <!-- Room Specs -->
-                            <div class="flex items-center gap-4 text-xs text-gray-300 border-y border-gray-700/60 py-3 mb-4">
-                                <span class="flex items-center gap-1.5"><i class="fa-solid fa-vector-square text-gold"></i> 160 m²</span>
-                                <span class="flex items-center gap-1.5"><i class="fa-solid fa-bed text-gold"></i> 2 Giường King</span>
-                                <span class="flex items-center gap-1.5"><i class="fa-solid fa-user-group text-gold"></i> 4-5 Khách</span>
-                            </div>
 
-                            <!-- Amenities Icons -->
-                            <div class="space-y-2 text-sm text-gray-400 mb-6">
-                                <div class="flex items-center gap-2"><i class="fa-solid fa-person-swimming text-gold/70 w-4"></i> Hồ bơi vô cực riêng trên tầng tum</div>
-                                <div class="flex items-center gap-2"><i class="fa-solid fa-user-tie text-gold/70 w-4"></i> Quản gia cá nhân (Butler 24/7)</div>
-                                <div class="flex items-center gap-2"><i class="fa-solid fa-car text-gold/70 w-4"></i> Xe đưa đón sân bay xa hoa</div>
+                    <!-- Pricing & Action Button -->
+                    <div class="p-5 pt-0">
+                        <!-- Discount Badge -->
+                        <div class="inline-block bg-emerald-50 text-emerald-600 text-xs font-semibold px-2.5 py-1 rounded-full mb-2">
+                            -10% khuyến mãi
+                        </div>
+
+                        <!-- Price -->
+                        <div class="mb-4">
+                            <span class="text-xs text-slate-400 line-through block mb-0.5">1.210.000đ</span>
+                            <div class="flex items-baseline gap-1">
+                                <span class="text-2xl font-extrabold text-sky-700">1.100.000đ</span>
+                                <span class="text-xs text-slate-500 font-normal">/ đêm</span>
                             </div>
                         </div>
 
-                        <button onclick="selectRoom('Presidential Suite')" class="w-full py-3 rounded-md border border-gold text-gold hover:bg-gold hover:text-navy font-semibold text-sm uppercase tracking-wider transition-all duration-300">
-                            Đặt Phòng Ngay
+                        <!-- Button -->
+                        <button onclick="selectRoom('Phòng Deluxe')" class="w-full bg-[#0872a4] hover:bg-[#065b83] text-white font-semibold py-3 px-4 rounded-full text-sm transition-colors duration-200 shadow-sm">
+                            Đặt phòng này
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Card 4: Phòng Family -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col justify-between">
+                    <div>
+                        <!-- Image -->
+                        <div class="relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=600&q=80" 
+                                 alt="Phòng Family" 
+                                 class="w-full h-48 object-cover hover:scale-105 transition-transform duration-500"
+                                 onerror="this.src='https://placehold.co/600x400/e2e8f0/0f172a?text=Phong+Family'">
+                        </div>
+                        
+                        <!-- Content -->
+                        <div class="p-5">
+                            <h3 class="text-xl font-bold text-slate-800 mb-2">Phòng Family</h3>
+                            
+                            <p class="text-xs text-slate-500 leading-relaxed mb-3">
+                                2 phòng · Phòng 201 và 401
+                            </p>
+
+                            <div class="flex items-center gap-2 text-xs font-medium text-slate-700 mb-6">
+                                <i class="fa-solid fa-bed text-rose-800 text-sm"></i>
+                                <span>Hai giường 1,8 m + 1,4 m</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pricing & Action Button -->
+                    <div class="p-5 pt-0">
+                        <!-- Discount Badge -->
+                        <div class="inline-block bg-emerald-50 text-emerald-600 text-xs font-semibold px-2.5 py-1 rounded-full mb-2">
+                            -10% khuyến mãi
+                        </div>
+
+                        <!-- Price -->
+                        <div class="mb-4">
+                            <span class="text-xs text-slate-400 line-through block mb-0.5">1.340.000đ</span>
+                            <div class="flex items-baseline gap-1">
+                                <span class="text-2xl font-extrabold text-sky-700">1.200.000đ</span>
+                                <span class="text-xs text-slate-500 font-normal">/ đêm</span>
+                            </div>
+                        </div>
+
+                        <!-- Button -->
+                        <button onclick="selectRoom('Phòng Family')" class="w-full bg-[#0872a4] hover:bg-[#065b83] text-white font-semibold py-3 px-4 rounded-full text-sm transition-colors duration-200 shadow-sm">
+                            Đặt phòng này
                         </button>
                     </div>
                 </div>
 
             </div>
+
+            <!-- Footer Note Under Rooms List -->
+            <div class="text-center mt-12">
+                <p class="text-xs sm:text-sm text-slate-500">
+                    Giá niêm yết đã bao gồm thuế VAT 10% · Nhận phòng 14:00 · Trả phòng 12:00 · Vui lòng mang theo CCCD / hộ chiếu khi nhận phòng.
+                </p>
+            </div>
+
         </div>
     </section>
 
@@ -585,9 +674,10 @@
                         <div>
                             <label class="block text-xs uppercase tracking-wider font-semibold text-gray-300 mb-2">Loại Phòng *</label>
                             <select id="room-select" class="w-full bg-navy-light border border-gray-700 focus:border-gold rounded-md px-4 py-3 text-white outline-none transition-colors">
-                                <option value="Deluxe Ocean View">Deluxe Ocean View (3.500.000 VNĐ/đêm)</option>
-                                <option value="Suite Hoàng Gia">Suite Hoàng Gia (6.800.000 VNĐ/đêm)</option>
-                                <option value="Presidential Suite">Presidential Suite (15.000.000 VNĐ/đêm)</option>
+                                <option value="Phòng Standard">Phòng Standard (800.000 VNĐ/đêm)</option>
+                                <option value="Phòng Đơn VIP">Phòng Đơn VIP (1.000.000 VNĐ/đêm)</option>
+                                <option value="Phòng Deluxe">Phòng Deluxe (1.100.000 VNĐ/đêm)</option>
+                                <option value="Phòng Family">Phòng Family (1.200.000 VNĐ/đêm)</option>
                             </select>
                         </div>
 
